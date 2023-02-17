@@ -1,28 +1,28 @@
 <%- include('./partials/head') %>
   <section class="site-title">
     <section class="title">
-      <h1>FDND <span><%= squad.name %></span> landings pagina</h1>
+      <h1>FDND <span>
+          <%= squad.name %>
+        </span> landings pagina</h1>
     </section>
     <section class="filter">
       <p>Kiez je squad</p>
       <ul>
-        <li><a href="/?squad=squad-a-2022">Squad A</a></li>
-        <li><a href="/?squad=squad-b-2022">Squad B</a></li>
-        <li><a href="/?squad=squat-c-2022">Squad C</a></li>
+        <li><a href="/?squad=squad-a-2022" <% if(squad.slug == "squad-a-2022") {%> class="active"<%}%> >Squad A</a></li>
+        <li><a href="/?squad=squad-b-2022" <% if(squad.slug == "squad-b-2022") {%> class="active"<%}%> >Squad B</a></li>
+        <li><a href="/?squad=squat-c-2022" <% if(squad.slug == "squat-c-2022") {%> class="active"<%}%> >Squad C</a></li>
       </ul>
     </section>
   </section>
   <section class="squad">
-    <% const colors = [
-      '#ed7300',
-      '#911833',
-      '#d9e021',
-      '#00a99d',
-      '#0200a9',
-      '#00e019',
-    ] %>
-    <% squad.members.forEach(member => { %>
-      <button class="member" style="--size:<%= member.githubRepositories %>;--bg-color:<%= colors[Math.floor(Math.random() * colors.length)] %>"><%= member.name %></button>
-    <% }) %>
+    <% const colors=[ '#ed7300' , '#911833' , '#d9e021' , '#00a99d' , '#0200a9' , '#00e019' , ] %>
+
+      <% squad.members.forEach(member=> { %>
+        <button class="member"
+          style="--size:<%= member.githubRepositories %>;--bg-color:<%= colors[Math.floor(Math.random() * colors.length)] %>">
+          <%= member.name %>
+        </button>
+        <% }) %>
+
   </section>
   <%- include('./partials/foot') %>

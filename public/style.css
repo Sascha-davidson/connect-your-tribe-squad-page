@@ -25,7 +25,7 @@ body {
   padding: 2em;
   display: flex;
   flex-direction: column;
-  gap: 2em;
+  gap: 1em;
 }
 
 h1 {
@@ -33,7 +33,7 @@ h1 {
   color: var(--light);
 }
 
-h1 span{
+h1 span {
   color: var(--orange);
 }
 
@@ -52,11 +52,12 @@ p {
 
 .filter {
   display: flex;
-  align-items: center ;
+  align-items: center;
   gap: 0.5em;
   overflow-x: auto;
   padding-top: 1em;
-  white-space:nowrap;
+  padding-bottom: 1em;
+  white-space: nowrap;
 }
 
 .filter ul {
@@ -70,16 +71,19 @@ p {
   width: fit-content;
   height: fit-content;
   text-decoration: none;
-  padding: .5em 1em;
-  margin: 0 .15em;
-  font-size: 1,125em;
+  padding: 0.5em 1em;
+  margin: 0 0.15em;
+  font-size: 1, 125em;
   color: var(--light);
   background-color: var(--primary);
   border-radius: var(--border);
+  transition: 0.3s ease-in-out;
+
 }
 
-.filter ul li a:hover {
+.filter ul li a:hover, .filter ul li .active {
   background-color: var(--orange);
+  color: black;
 }
 
 .squad {
@@ -88,8 +92,8 @@ p {
   min-height: calc(100vh - 6em - 84px);
   background-color: var(--primary);
   border-radius: var(--border);
+  outline: 4px solid var(--orange);
 }
-
 
 .member {
   aspect-ratio: 1;
@@ -100,10 +104,13 @@ p {
   background-color: var(--bg-color, --orange);
   font-size: 1.125em;
   overflow: hidden;
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
 }
 
-.member:hover,.member:focus {
-transform: scale(.8);
+.member:hover,
+.member:focus {
+  transform: scale(0.8);
 }
 
 @media screen and (min-width: 600px) {
@@ -113,14 +120,18 @@ transform: scale(.8);
 }
 
 @media screen and (min-width: 1000px) {
+  body {
+    gap: 2em;
+  }
   .site-title {
     flex-direction: row;
     align-items: center;
     gap: 1em;
   }
 
-  .filter{
+  .filter {
     padding-top: 0;
+    padding-bottom: 0;
   }
 
   .squad {

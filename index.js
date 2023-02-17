@@ -28,7 +28,7 @@ app.get('/', function (req, res) {
     })
     
     // res.send('Hello World!')
-    res.render('index', data)
+    res.render('index', data, slug)
   })
 
 })
