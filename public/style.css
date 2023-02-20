@@ -233,13 +233,14 @@ hr {
   cursor: pointer;
 }
 
-.card-page-switch button:nth-child(1) {
+.card-page-switch button:nth-child(1):hover {
   border-radius: 30px 0 10px 0;
+  background-color: #ffffff4e;
 
 }
 
 .card-page-switch button:nth-child(2) {
-  background-color: green;
+  background-color: #ffffff4e;
   border-radius: 0 30px 0 10px;
 }
 
@@ -247,13 +248,20 @@ hr {
   position: absolute;
   top: 0;
   right: 0;
-  transform: translateY(-3.5em);
+  transform: translateY(-3em);
   color: var(--light);
   background-color: #fff;
   padding: 0.5em 2em;
   border-radius: 50px;
   border: none;
   color: black;
+  font-size: 1.125em;
+}
+
+.close:hover,
+.close:focus {
+  /* background-color: red; */
+  outline: 4px solid red;
 }
 
 @media screen and (min-width: 600px) {
