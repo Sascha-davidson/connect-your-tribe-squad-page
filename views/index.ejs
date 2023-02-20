@@ -20,54 +20,69 @@
       <% squad.members.forEach(member=> { %>
         <button data-id="<%= member.id %>" class="member card-trigger"
           style="--size:<%= member.githubRepositories %>;--bg-color:<%= colors[Math.floor(Math.random() * colors.length)] %>">
-          <% if (member.avatar) { %> 
+          <% if (member.avatar) { %>
             <img src="<%= member.avatar %>"
               alt="De avatar van <%= member.name %> <%= member.preflex %><%= member.surname %>" />
-          <% } else { %> 
-            <img src="./links/avatar-placeholder.png" alt="placeholder avatar" />
-          <% } %>
+            <% } else { %>
+              <img src="./links/avatar-placeholder.png" alt="placeholder avatar" />
+              <% } %>
         </button>
 
 
-        <div class="card" id="<%= member.id %>">
-          <div class="card-intro">
-          <% if (member.avatar) { %> 
-            <img src="<%= member.avatar %>"
-              alt="De avatar van <%= member.name %> <%= member.preflex %><%= member.surname %>" />
-          <% } else { %> 
-            <img src="./links/avatar-placeholder.png" alt="placeholder avatar" />
-          <% } %>
-          <h1>
-            <%= member.name %> <%= member.preflex %><%= member.surname %>
-          </h1>
-          <p>nickname: <%=member.nickname %></p>
-        </div>
-      
-          <div class="card-switch">
-            <div class="card-page-switch">
-              <button>Info</button>
-              <button>bericht</button>
+        <dialog class="card" id="<%= member.id %>">
+          <div class="inline">
+
+            <div class="card-intro">
+              <% if (member.avatar) { %>
+                <img src="<%= member.avatar %>"
+                  alt="De avatar van <%= member.name + ' ' + member.prefix + ' ' + member.surname %>" />
+                <% } else { %>
+                  <img src="./links/avatar-placeholder.png" alt="placeholder avatar" />
+                  <% } %>
+                    <h1><%= member.name + ' ' + member.prefix + ' ' + member.surname %></h1>
+                    <p>nickname: <% if (member.nickname) { %>
+                        <%- member.nickname %>
+                            <% } %>
+                    </p>
             </div>
-            <div class="content">
-              <hr>
-      
-              <div class="contact-info">
-                <h2>Contact</h2>
-                <% if (member.gitHubHandle) { %> 
-                <a href="<%= member.gitHubHandle %>">Github</a><% } %>
-                <% if (member.gitHubHandle) { %> 
-                  <a href="<%= member.website %>">website</a><% } %>
+
+            <div class="card-switch">
+              <div class="card-page-switch">
+                <button>Info</button>
+                <button>bericht</button>
               </div>
-              <hr>
-              <h2>Bio</h2>
-              <p></p>
+              <div class="content">
+                <hr>
+
+                <div class="contact-info">
+                  <h2>Contact</h2>
+                  <% if (member.gitHubHandle) { %>
+                    <a href="<%= member.gitHubHandle %>">Github</a>
+                    <% } %>
+                      <% if (member.gitHubHandle) { %>
+                        <a href="<%= member.website %>">website</a>
+                        <% } %>
+                </div>
+                <hr>
+                <h2>Bio</h2>
+                <p>
+                  <% if (member.bio) { %>
+                    <%- member.bio.html %>
+                      <% } else { %>
+                        This person does not have a bio ;(
+                        <% } %>
+                </p>
+              </div>
             </div>
+            <button class="close" value="cancel">Terug</button>
+
           </div>
-        </div>
+        </dialog>
         <% }) %>
+  </section>
 
 
-  
+
 
 
   <%- include('./partials/foot') %>
