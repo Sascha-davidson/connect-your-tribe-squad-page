@@ -6,11 +6,11 @@
         </span> landings pagina</h1>
     </section>
     <section class="filter">
-      <p>Kiez je squad</p>
+      <p>Kies je squad</p>
       <ul>
-        <li><a href="/?squad=squad-a-2022" <% if(squad.slug == "squad-a-2022") {%> class="active"<%}%> >Squad A</a></li>
-        <li><a href="/?squad=squad-b-2022" <% if(squad.slug == "squad-b-2022") {%> class="active"<%}%> >Squad B</a></li>
-        <li><a href="/?squad=squat-c-2022" <% if(squad.slug == "squat-c-2022") {%> class="active"<%}%> >Squad C</a></li>
+        <li><a href="/?squad=squad-a-2022" <% if(squad.slug=="squad-a-2022" ) {%> class="active"<%}%> >Squad A</a></li>
+        <li><a href="/?squad=squad-b-2022" <% if(squad.slug=="squad-b-2022" ) {%> class="active"<%}%> >Squad B</a></li>
+        <li><a href="/?squad=squat-c-2022" <% if(squad.slug=="squat-c-2022" ) {%> class="active"<%}%> >Squad C</a></li>
       </ul>
     </section>
   </section>
@@ -18,11 +18,56 @@
     <% const colors=[ '#ed7300' , '#911833' , '#d9e021' , '#00a99d' , '#0200a9' , '#00e019' , ] %>
 
       <% squad.members.forEach(member=> { %>
-        <button class="member"
+        <button data-id="<%= member.id %>" class="member card-trigger"
           style="--size:<%= member.githubRepositories %>;--bg-color:<%= colors[Math.floor(Math.random() * colors.length)] %>">
-          <%= member.name %>
+          <% if (member.avatar) { %> 
+            <img src="<%= member.avatar %>"
+              alt="De avatar van <%= member.name %> <%= member.preflex %><%= member.surname %>" />
+          <% } else { %> 
+            <img src="./links/avatar-placeholder.png" alt="placeholder avatar" />
+          <% } %>
         </button>
+
+
+        <div class="card" id="<%= member.id %>">
+          <div class="card-intro">
+          <% if (member.avatar) { %> 
+            <img src="<%= member.avatar %>"
+              alt="De avatar van <%= member.name %> <%= member.preflex %><%= member.surname %>" />
+          <% } else { %> 
+            <img src="./links/avatar-placeholder.png" alt="placeholder avatar" />
+          <% } %>
+          <h1>
+            <%= member.name %> <%= member.preflex %><%= member.surname %>
+          </h1>
+          <p>nickname: <%=member.nickname %></p>
+        </div>
+      
+          <div class="card-switch">
+            <div class="card-page-switch">
+              <button>Info</button>
+              <button>bericht</button>
+            </div>
+            <div class="content">
+              <hr>
+      
+              <div class="contact-info">
+                <h2>Contact</h2>
+                <% if (member.gitHubHandle) { %> 
+                <a href="<%= member.gitHubHandle %>">Github</a><% } %>
+                <% if (member.gitHubHandle) { %> 
+                  <a href="<%= member.website %>">website</a><% } %>
+              </div>
+              <hr>
+              <h2>Bio</h2>
+              <p></p>
+            </div>
+          </div>
+        </div>
         <% }) %>
 
-  </section>
+
+  
+
+
   <%- include('./partials/foot') %>

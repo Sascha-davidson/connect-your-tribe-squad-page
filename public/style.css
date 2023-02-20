@@ -42,6 +42,18 @@ p {
   color: var(--light);
 }
 
+hr {
+  width: 100%;
+  margin: auto;
+  height: 0.25em;
+  color: black;
+  background-color: black;
+  border: none;
+  border-radius: var(--border);
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+}
+
 .site-title {
   display: flex;
   flex-direction: column;
@@ -98,7 +110,6 @@ p {
 .member {
   aspect-ratio: 1;
   border-radius: 50%;
-  padding: 1em;
   border: none;
   min-width: calc(var(--size) * 4px);
   background-color: var(--bg-color, --orange);
@@ -106,16 +117,114 @@ p {
   overflow: hidden;
   transition: 0.2s ease-in-out;
   cursor: pointer;
+  outline: 5px solid orange;
+  outline-offset: -5px;
 }
 
 .member:hover,
 .member:focus {
-  transform: scale(0.8);
+  transform: scale(0.9);
 }
+
+.member img{
+  aspect-ratio: 1;
+  height: 100%;
+}
+
+.card {
+  position: absolute;
+  height: 80vh;
+  height: 80svh;
+  width: 80vw;
+  width: 80svw;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-height: 67.5em;
+  min-width: 17.5em;
+  z-index: 3;
+  background-color: #fff;
+  color: black;
+  padding: 1em 1em 0 1em;
+
+  border-radius: 30px;
+  opacity: 0;
+  pointer-events: none;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.card.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.card p, .card h1, .card h2{
+  color: black;
+}
+
+.card-intro{
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  width: 100%;
+  padding-bottom: 1em;
+}
+
+.card img{
+  aspect-ratio: 1;
+  width: 100%;
+  border-radius: 30px;
+}
+
+.card-switch{
+  width: calc(100% + 2em);
+  background-color: orange;
+  transform: translateX(-1em);
+  border-radius: 30px 30px 0 0;
+  overflow: hidden;
+  height: 100%;
+
+}
+
+.card-page-switch{
+  width: 100%;
+  display: flex;
+}
+.card-page-switch button{
+  width: 100%;
+  padding: 1em;
+  border: none;
+  background-color: orange;
+  font-size: 1.125em;
+  border-radius: 30px 30px 0 0;
+  cursor: pointer;
+}
+
+.content{
+  padding: 0 1em 1em 1em;
+}
+
+/* .card-page-switch button:nth-child(1){
+border-radius: 0 0 30px 0;
+}
+
+.card-page-switch button:nth-child(2){
+  border-radius: 0 0 0 30px;
+} */
 
 @media screen and (min-width: 600px) {
   .member {
     min-width: calc(var(--size) * 7px);
+  }
+}
+
+@media screen and (min-width: 34em) {
+  .card {
+    width: auto;
+    aspect-ratio: 9/16;
+    min-width: 19em;
+
   }
 }
 
