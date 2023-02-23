@@ -28,7 +28,7 @@ https://fine-tan-gharial-belt.cyclic.app/
 <br>
 
 ## Interactie 
-De gebruiker kan op deze pagina informatie vinden over mijn squad. Er zit een hover op de rondjes, als je er op klickt dan krijg een kaartje met de informatie over die squad genoot. Ook kan je de andere squads bekijken die in het zelfde jaar zitten.
+De gebruiker kan op deze pagina informatie vinden over mijn squad. De rondjes bouwnsen van de muur en elkaar af, als je er op klickt dan krijg een kaartje met de informatie over die squad genoot. Ook kan je de andere squads bekijken die in het zelfde jaar zitten.
 
 <br>
 
