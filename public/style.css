@@ -137,10 +137,6 @@ hr {
   border-radius: 50%;
 }
 
-.member:hover p {
-  opacity: 1;
-}
-
 .card {
   position: fixed;
   height: 80vh;
@@ -175,11 +171,6 @@ dialog::backdrop {
   flex-direction: column;
   justify-content: space-between;
 }
-
-/* .card.active {
-  opacity: 1;
-  pointer-events: all;
-} */
 
 .card p,
 .card h1,
