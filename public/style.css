@@ -1,5 +1,6 @@
 :root {
   --border: 30px;
+  --border-round: 50px;
   --box-shadow: rgba(255, 255, 255, 0.35) 0px 5px 15px;
   --light: #fff;
   --primary: #2a384b;
@@ -105,7 +106,7 @@ hr {
 
   background-color: var(--primary);
   border-radius: var(--border);
-  outline: 4px solid var(--orange);
+  outline: 0.25em solid var(--orange);
 }
 
 .member {
@@ -116,24 +117,26 @@ hr {
   min-width: calc(var(--size) * 5px);
   max-width: 4em;
   background-color: black;
-  outline: 5px solid var(--bg-color, --orange);
-  outline-offset: -5px;
-
+  border: 0.25em  solid var(--bg-color, --orange);
   font-size: 1.125em;
   overflow: hidden;
   cursor: pointer;
 }
 
-.member:hover,
-.member:focus {
-  transform: scale(0.9);
-}
+
 
 .member img {
   aspect-ratio: 1;
   width: 100%;
   object-fit: cover;
   border-radius: 50%;
+  opacity: .5;
+  transition: .3s;
+}
+
+.member:hover img,
+.member:focus img {
+  opacity: 1;
 }
 
 .card {
@@ -151,7 +154,7 @@ hr {
   background-color: #fff;
   color: black;
   overflow: visible;
-  border-radius: 30px;
+  border-radius: var(--border);
   border: none;
 }
 
@@ -188,14 +191,14 @@ dialog::backdrop {
 .card img {
   aspect-ratio: 1;
   width: 100%;
-  border-radius: 30px;
+  border-radius: var(--border);
   object-fit: cover;
 }
 
 .card-switch {
   width: 100%;
   background-color: orange;
-  border-radius: 30px 30px 0 0;
+  border-radius: var(--border) var(--border) 0 0;
 }
 
 .content {
@@ -209,7 +212,7 @@ dialog::backdrop {
 
 .card a {
   color: black;
-  text-underline-offset: 7px;
+  text-underline-offset: 0.375em;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 500;
   font-size: 1.125em;
@@ -229,7 +232,7 @@ dialog::backdrop {
   color: var(--light);
   background-color: #fff;
   padding: 0.5em 2em;
-  border-radius: 50px;
+  border-radius: var(--border-round);
   border: none;
   color: black;
   font-size: 1.125em;
@@ -237,16 +240,10 @@ dialog::backdrop {
 
 .close:hover {
   /* background-color: red; */
-  outline: 4px solid red;
+  outline: .25em solid red;
 }
 
-@media screen and (min-width: 600px) {
-  .member {
-    min-width: calc(var(--size) * 7px);
-    max-width: 5em;
-  }
-}
-
+/* scherm groote van af (544px = 34em) */
 @media screen and (min-width: 34em) {
   .card {
     width: auto;
@@ -259,9 +256,18 @@ dialog::backdrop {
     aspect-ratio: 9/16;
     min-width: 19em;
   }
+
+  .card-intro {
+    padding: 2em;
+  }
+
+  .content {
+    padding: 2em;
+  }
 }
 
-@media screen and (min-width: 1000px) {
+/* scherm groote van af (1000px = 62.5em) */
+@media screen and (min-width: 62.5em) {
   body {
     gap: 2em;
   }
@@ -282,13 +288,10 @@ dialog::backdrop {
   }
 }
 
-/* scherm groote van af (544px = 34em) */
-@media screen and (min-width: 34em) {
-  .card-intro {
-    padding: 2em;
-  }
-
-  .content {
-    padding: 2em;
+/* scherm groote van af (1920px = 120em) */
+@media screen and (min-width: 120em) {
+  .member {
+    min-width: calc(var(--size) * 7px);
+    max-width:5em;
   }
 }
