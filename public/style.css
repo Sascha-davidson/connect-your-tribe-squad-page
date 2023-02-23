@@ -44,14 +44,12 @@ p {
 
 hr {
   width: 100%;
-  margin: auto;
   height: 0.25em;
   color: black;
   background-color: black;
   border: none;
   border-radius: var(--border);
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
+  margin: 1em auto;
 }
 
 .site-title {
@@ -102,6 +100,8 @@ hr {
   width: 100%;
   height: 100%;
   min-height: calc(100vh - 6em - 84px);
+  min-height: calc(100svh - 6em - 84px);
+
   background-color: var(--primary);
   border-radius: var(--border);
   outline: 4px solid var(--orange);
@@ -113,14 +113,19 @@ hr {
   border: none;
   min-width: calc(var(--size) * 30px);
   max-width: 5em;
-  background-color: var(--bg-color, --orange);
+  background-color: black;
   outline: 5px solid var(--bg-color, --orange);
   outline-offset: -5px;
 
   font-size: 1.125em;
-  overflow: hidden;
   transition: 0.2s ease-in-out;
   cursor: pointer;
+  position: relative;
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
 }
 
 .member:hover,
@@ -130,8 +135,22 @@ hr {
 
 .member img {
   aspect-ratio: 1;
-  height: 100%;
+  width: 100%;
   object-fit: cover;
+  border-radius: 50%;
+}
+
+.member p {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, calc(100% + 0.5em));
+  font-size: 1em;
+  opacity: 0;
+}
+
+.member:hover p {
+  opacity: 1;
 }
 
 .card {
@@ -157,6 +176,11 @@ hr {
   overflow-y: auto;
   height: inherit;
   border-radius: inherit;
+  max-height: 67.5em;
+  min-width: 17.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 /* .card.active {
@@ -189,25 +213,15 @@ hr {
   width: 100%;
   background-color: orange;
   border-radius: 30px 30px 0 0;
-  padding-bottom: 1em;
-
-  }
-
-.card-page-switch {
-  width: 100%;
-  display: flex;
-  background-color: orange;
-  border-radius: 30px 30px 0 0;
 }
 
 .content {
-  padding: 0 1em 1em 1em;
+  padding: 1em;
 }
 
 .contact-info {
   display: flex;
   flex-direction: column;
-  padding: 1em 0;
 }
 
 .card a {
@@ -224,26 +238,6 @@ hr {
   color: var(--light);
 }
 
-.card-page-switch button {
-  width: 100%;
-  padding: 1em;
-  border: none;
-  background-color: transparent;
-  font-size: 1.125em;
-  cursor: pointer;
-}
-
-.card-page-switch button:nth-child(1):hover {
-  border-radius: 30px 0 10px 0;
-  background-color: #ffffff4e;
-
-}
-
-.card-page-switch button:nth-child(2) {
-  background-color: #ffffff4e;
-  border-radius: 0 30px 0 10px;
-}
-
 .close {
   position: absolute;
   top: 0;
@@ -258,8 +252,7 @@ hr {
   font-size: 1.125em;
 }
 
-.close:hover,
-.close:focus {
+.close:hover {
   /* background-color: red; */
   outline: 4px solid red;
 }
@@ -272,6 +265,12 @@ hr {
 
 @media screen and (min-width: 34em) {
   .card {
+    width: auto;
+    aspect-ratio: 9/16;
+    min-width: 19em;
+  }
+
+  .inline {
     width: auto;
     aspect-ratio: 9/16;
     min-width: 19em;
@@ -295,5 +294,17 @@ hr {
 
   .squad {
     min-height: calc(100vh - 6em - 34.4px);
+    min-height: calc(100svh - 6em - 34.4px);
+  }
+}
+
+/* scherm groote van af (544px = 34em) */
+@media screen and (min-width: 34em) {
+  .card-intro {
+    padding: 2em;
+  }
+
+  .content {
+    padding: 2em;
   }
 }

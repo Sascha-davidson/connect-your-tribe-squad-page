@@ -20,12 +20,15 @@
       <% squad.members.forEach(member=> { %>
         <button data-id="<%= member.id %>" class="member card-trigger"
           style="--size:<%= member.githubRepositories %>;--bg-color:<%= colors[Math.floor(Math.random() * colors.length)] %>">
+                        <p><%= member.name %></p>
+
           <% if (member.avatar) { %>
             <img src="<%= member.avatar %>"
               alt="De avatar van <%= member.name %> <%= member.preflex %><%= member.surname %>" />
             <% } else { %>
               <img src="./links/avatar-placeholder.png" alt="placeholder avatar" />
               <% } %>
+
         </button>
 
 
@@ -39,21 +42,17 @@
                 <% } else { %>
                   <img src="./links/avatar-placeholder.png" alt="placeholder avatar" />
                   <% } %>
-                    <h1><%= member.name + ' ' + member.prefix + ' ' + member.surname %></h1>
+                    <h1>
+                      <%= member.name + ' ' + member.prefix + ' ' + member.surname %>
+                    </h1>
                     <p>nickname: <% if (member.nickname) { %>
                         <%- member.nickname %>
-                            <% } %>
+                          <% } %>
                     </p>
             </div>
 
             <div class="card-switch">
-              <div class="card-page-switch">
-                <button>Info</button>
-                <button>bericht</button>
-              </div>
               <div class="content">
-                <hr>
-
                 <div class="contact-info">
                   <h2>Contact</h2>
                   <% if (member.gitHubHandle) { %>
@@ -74,7 +73,7 @@
                 </p>
               </div>
             </div>
-            <button class="close" value="cancel">Terug</button>
+            <button class="close" value="cancel">sluiten</button>
 
           </div>
         </dialog>
