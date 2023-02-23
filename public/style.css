@@ -113,8 +113,8 @@ hr {
   aspect-ratio: 1;
   border-radius: 50%;
   border: none;
-  min-width: calc(var(--size) * 30px);
-  max-width: 5em;
+  min-width: calc(var(--size) * 5px);
+  max-width: 3em;
   background-color: black;
   outline: 5px solid var(--bg-color, --orange);
   outline-offset: -5px;
@@ -244,6 +244,7 @@ dialog::backdrop {
 @media screen and (min-width: 600px) {
   .member {
     min-width: calc(var(--size) * 7px);
+    max-width: 5em;
   }
 }
 
