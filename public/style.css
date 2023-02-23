@@ -114,7 +114,7 @@ hr {
   border-radius: 50%;
   border: none;
   min-width: calc(var(--size) * 5px);
-  max-width: 3em;
+  max-width: 4em;
   background-color: black;
   outline: 5px solid var(--bg-color, --orange);
   outline-offset: -5px;
