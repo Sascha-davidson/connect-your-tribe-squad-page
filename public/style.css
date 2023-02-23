@@ -108,6 +108,7 @@ hr {
 }
 
 .member {
+  position:absolute;
   aspect-ratio: 1;
   border-radius: 50%;
   border: none;
@@ -124,11 +125,6 @@ hr {
   position: relative;
 }
 
-dialog::backdrop {
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(3px);
-}
-
 .member:hover,
 .member:focus {
   transform: scale(0.9);
@@ -139,15 +135,6 @@ dialog::backdrop {
   width: 100%;
   object-fit: cover;
   border-radius: 50%;
-}
-
-.member p {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translate(-50%, calc(100% + 0.5em));
-  font-size: 1em;
-  opacity: 0;
 }
 
 .member:hover p {
@@ -171,6 +158,11 @@ dialog::backdrop {
   overflow: visible;
   border-radius: 30px;
   border: none;
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
 }
 
 .inline {
