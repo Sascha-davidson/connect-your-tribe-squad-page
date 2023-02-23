@@ -1,7 +1,4 @@
 const allTriggers = document.querySelectorAll('.card-trigger')
-
-console.log(allTriggers);
-
 const startingVelocity = 2.5;
 allTriggers.forEach((trigger) => {
     console.log(trigger)
@@ -15,14 +12,15 @@ allTriggers.forEach((trigger) => {
     trigger.addEventListener('click', () => {
         const dataId = trigger.dataset.id
         const card = document.getElementById(dataId)
-@ -14,9 +19,111 @@ allTriggers.forEach((trigger) => {
+        // card.classList.add('active')
+        card.showModal();
+
+        const close_buttons = document.querySelectorAll(".close");
         close_buttons.forEach((close) => {
             close.addEventListener("click", () => {
                 card.close()
-            }); 
             });
         })
-
     })
 })
 
