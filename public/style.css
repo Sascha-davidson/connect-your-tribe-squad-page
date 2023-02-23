@@ -117,21 +117,19 @@ hr {
   min-width: calc(var(--size) * 5px);
   max-width: 4em;
   background-color: black;
-  border: 0.25em  solid var(--bg-color, --orange);
+  border: 0.25em solid var(--bg-color, --orange);
   font-size: 1.125em;
   overflow: hidden;
   cursor: pointer;
 }
-
-
 
 .member img {
   aspect-ratio: 1;
   width: 100%;
   object-fit: cover;
   border-radius: 50%;
-  opacity: .5;
-  transition: .3s;
+  opacity: 0.5;
+  transition: 0.3s;
 }
 
 .member:hover img,
@@ -240,7 +238,7 @@ dialog::backdrop {
 
 .close:hover {
   /* background-color: red; */
-  outline: .25em solid red;
+  outline: 0.25em solid red;
 }
 
 /* scherm groote van af (544px = 34em) */
@@ -263,6 +261,14 @@ dialog::backdrop {
 
   .content {
     padding: 2em;
+  }
+}
+
+/* scherm groote van af (600px = 37.5en) */
+@media screen and (min-width: 34em) {
+  .member {
+    min-width: calc(var(--size) * 7px);
+    max-width: 4em;
   }
 }
 
@@ -292,6 +298,6 @@ dialog::backdrop {
 @media screen and (min-width: 120em) {
   .member {
     min-width: calc(var(--size) * 7px);
-    max-width:5em;
+    max-width: 5em;
   }
 }
