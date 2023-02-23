@@ -20,14 +20,17 @@
       <% squad.members.forEach(member=> { %>
         <button data-id="<%= member.id %>" class="member card-trigger"
           style="--size:<%= member.githubRepositories %>;--bg-color:<%= colors[Math.floor(Math.random() * colors.length)] %>">
-                        <p><%= member.name %></p>
 
           <% if (member.avatar) { %>
+            <div class="name">
             <img src="<%= member.avatar %>"
               alt="De avatar van <%= member.name %> <%= member.preflex %><%= member.surname %>" />
             <% } else { %>
               <img src="./links/avatar-placeholder.png" alt="placeholder avatar" />
               <% } %>
+
+              <p><%= member.name %></p>
+            </div>
 
         </button>
 
