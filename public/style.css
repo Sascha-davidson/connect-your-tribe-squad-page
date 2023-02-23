@@ -108,7 +108,6 @@ hr {
 }
 
 .member {
-  position: absolute;
   aspect-ratio: 1;
   border-radius: 50%;
   border: none;
@@ -119,6 +118,8 @@ hr {
   outline-offset: -5px;
 
   font-size: 1.125em;
+  overflow: hidden;
+  transition: 0.2s ease-in-out;
   cursor: pointer;
   position: relative;
 }
@@ -293,7 +294,6 @@ dialog::backdrop {
   }
 
   .squad {
-    position: relative;
     min-height: calc(100vh - 6em - 34.4px);
     min-height: calc(100svh - 6em - 34.4px);
   }
