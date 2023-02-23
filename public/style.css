@@ -121,7 +121,6 @@ hr {
 
   font-size: 1.125em;
   overflow: hidden;
-  transition: 0.2s ease-in-out;
   cursor: pointer;
 }
 
