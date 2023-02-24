@@ -1,30 +1,45 @@
 > _Fork_ deze leertaak en ga aan de slag. Onderstaande outline ga je gedurende deze taak in jouw eigen GitHub omgeving uitwerken. De instructie vind je in: [docs/INSTRUCTIONS.md](docs/INSTRUCTIONS.md)
 
-# Titel
-<!-- Geef je project een titel en schrijf in één zin wat het is -->
+
+# FDND squad page
 
 ## Inhoudsopgave
 
-  * [Beschrijving](#beschrijving)
-  * [Kenmerken](#kenmerken)
-  * [Installatie](#installatie)
-  * [Gebruik](#gebruik)
-  * [Bronnen](#bronnen)
+  * [De opdracht](#De-opdracht)
+  * [De product](#De-product)
+  * [Interactie](#Interactie)
+  * [Tools](#Tools)
   * [Licentie](#licentie)
 
-## Beschrijving
-<!-- In de Beschrijving staat hoe je project er uit ziet, hoe het werkt en wat je er mee kan. -->
-<!-- Voeg een mooie poster visual toe 📸 -->
-<!-- Voeg een link toe naar Github Pages 🌐-->
+<br>
 
-## Kenmerken
-<!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met Javascript gedaan en hoe? Misschien heb je een framwork of library gebruikt? -->
+## De opdracht 
 
-## Installatie
+Voor deze opdracht moesten we een landings pagina maken voor de de squad. Dit is de zelfde opdracht als aan het begin van het jaar. Het belangrijkste is dat we een website maken via note en de data opvragen via een api.
 
-## Gebruik
+<br>
 
-## Bronnen
+## De product
+
+https://fine-tan-gharial-belt.cyclic.app/
+
+<img width="1920" alt="image" src="https://user-images.githubusercontent.com/112861160/221055425-2b2721e4-a6f7-4de6-9246-2ff1ef520c7c.png">
+
+<br>
+
+## Interactie 
+De gebruiker kan op deze pagina informatie vinden over mijn squad. De rondjes bouwnsen van de muur en elkaar af, als je er op klickt dan krijg een kaartje met de informatie over die squad genoot. Ook kan je de andere squads bekijken die in het zelfde jaar zitten.
+
+<br>
+
+## Tools
+* HTML
+* CSS
+* VISUAL STUDIO CODE
+* Note
+* api
+
+<br>
 
 ## Licentie
 
