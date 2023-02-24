@@ -23,8 +23,7 @@ Voor deze opdracht moesten we een landings pagina maken voor de de squad. Dit is
 
 https://fine-tan-gharial-belt.cyclic.app/
 
-<img width="1920" alt="image" src="https://user-images.githubusercontent.com/112861160/221055425-2b2721e4-a6f7-4de6-9246-2ff1ef520c7c.png">
-
+<img width="1920" alt="image" src="https://user-images.githubusercontent.com/112861160/221244114-556cead5-3263-42de-bb7e-8f4dd6162a81.png">
 <br>
 
 ## Interactie 
