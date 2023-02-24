@@ -30,7 +30,7 @@ body {
 }
 
 h1 {
-  font-size: clamp(1.6em, 7vw, 1.8em);
+  font-size: 1.8em;
   color: var(--light);
 }
 
@@ -101,8 +101,8 @@ hr {
   position: relative;
   width: 100%;
   height: 100%;
-  min-height: calc(100vh - 6em - 84px);
-  min-height: calc(100svh - 6em - 84px);
+  min-height: calc(100vh - 5em - 132px);
+  min-height: calc(100svh - 5em - 132px);
 
   background-color: var(--primary);
   border-radius: var(--border);
@@ -241,6 +241,14 @@ dialog::backdrop {
   outline: 0.25em solid red;
 }
 
+/* scherm groote van af (496px = 31em) */
+@media screen and (min-width: 31em) {
+  .squad {
+    min-height: calc(100vh - 6em - 84px);
+    min-height: calc(100svh - 6em - 84px);
+  }
+}
+
 /* scherm groote van af (544px = 34em) */
 @media screen and (min-width: 34em) {
   .card {
@@ -268,7 +276,7 @@ dialog::backdrop {
 @media screen and (min-width: 34em) {
   .member {
     min-width: calc(var(--size) * 7px);
-    max-width: 4em;
+    max-width: 5em;
   }
 }
 
