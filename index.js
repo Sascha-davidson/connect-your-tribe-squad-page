@@ -51,3 +51,16 @@ async function fetchJson(url) {
     .then((response) => response.json())
     .catch((error) => error);
 }
+
+let Object = {
+  name: "name",
+  birthday: "may",
+  secondObject: {
+    first: "1",
+    second: "2" 
+  }
+}
+
+const kaas = JSON.stringify(Object);
+const convertedJson = JSON.parse(kaas)
+console.log(kaas);
